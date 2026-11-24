@@ -1,0 +1,23 @@
+Compiler Studio regression tests — recovered engine and frontends
+
+The original six-stage compiler engine is bundled at app/libs/compiler-engine.jar.
+
+Engine smoke cases (direct JVM execution):
+1. Arithmetic: x=7, y=5, print(x*y+2) => 37
+2. If/else: condition true => yes
+3. While: counter 0..2 => 0, 1, 2
+4. Boolean: true and not false => true
+5. Float: 1.5 + 2.0 => 3.5
+6. String concatenation => Hello Mahdi
+7. Nested while + if/else + modulo (1..5) => odd, even, odd, even, odd
+8. Operator precedence: 1 + 2 * 3 => 7
+9. Comment and division: # comment; 8 / 2 => 4
+
+The full source regression suite contains 39 test methods:
+- 12 compiler-engine tests
+- 13 indentation-frontend tests
+- 14 function-frontend tests
+
+All 39 tests passed in a direct JVM harness using the bundled engine JAR.
+The Android build is treated as confirmed at the project owner's instruction;
+no new Android APK build was performed for this increment.
